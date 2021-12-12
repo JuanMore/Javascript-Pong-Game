@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: hsl(var(--hue), var(--saturation), 20%);
+    overflow: hidden;
+}
+
+/* Root variables */
+:root {
+    --hue: #CC231E;
+    --saturation: 50%;
+    --foreground-color: hsl(var(--hue), var(--saturation), 75%);
+    --background-color: hsl(var(--hue), var(--saturation), 20%);
+}
+
+.bg {
+    position: fixed;
+    background-image: url('/assets/tijana-drndarski-1L4q_S1atmc-unsplash.jpeg') ;
+    background-position: center;
+    background-size: cover;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+.paddle {
+    /* create variable to change positon in JS */
+    --position: 50;
+    position: absolute;
+    background-color: #CC231E;
+    /* set position to middle initially */
+    top: calc(var(--position) * 1vh);
+    transform: translateY(-50%);
+    width: 1vh;
+    height: 10vh;
+}
+
+.paddle.left {
+    left: 1vw;
+}
+
+.paddle.right {
+    right: 1vw;
+}
+
+.ball {
+    --x: 50;
+    --y: 50;
+    position: absolute;
+    background-color: #fff;
+    /* set position to middle initially */
+    top: calc(var(--y) * 1vh);
+    left: calc(var(--x) * 1vw);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    width: 2.5vh;
+    height: 2.5vh;
+    z-index: 1;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 7vh;
+    color: #235E6F;
+}
+
+.score > * {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 0 2vh;
+    margin: 1vh 0;
+    opacity: .5;
+}
+
+.score > :first-child {
+    text-align: right;
+    border-right: .5vh solid var(--foreground-color);
+}
+
+.sky {
+    height: 100%;
+    color: #FFF;
+    display: block;
+  }
