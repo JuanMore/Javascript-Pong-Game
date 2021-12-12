@@ -43,7 +43,7 @@ function handleLose() {
   computerPaddle.reset()
 }
 
- document.addEventListener("mousemove" || "touchmove", e => {
+ document.addEventListener("touchmove", e => {
     // convert it to value between 0-100
   playerPaddle.position = (e.y / window.innerHeight) * 100
 })
